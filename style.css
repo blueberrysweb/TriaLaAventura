@@ -1,0 +1,11 @@
+body {
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.text {
+    background-color: coral;
+    padding: 2em;
+    margin-bottom: 2em;
+    font-size: x-large;
+}
