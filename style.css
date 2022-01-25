@@ -1,11 +1,30 @@
+
+
 body {
     max-width: 30rem;
     margin: 0 auto;
+    background-color: cadetblue;
 }
 
 .text {
-    background-color: coral;
+    background-color: rgb(131, 245, 253);
     padding: 2em;
     margin-bottom: 2em;
     font-size: x-large;
+    text-align: center;
+}
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+  }
+.head {
+    background-color: rgb(77, 166, 250);
+  }
+.txttitol {
+    
+    margin-bottom: 2em;
+    font-size: x-large;
+    text-align: center;
+
 }

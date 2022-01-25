@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>La teva aventura</title>
-        
-    </head>
-    <body>
+    
+
+
+<head>
+    <title>La teva aventura</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <h1 class="txttitol">Benvingut a la teva aventura, llegeix i disfruta!</h1>
+        </div>
+    </header>
+
+    <main>
         <header>
-            <h1>Benvingut a la teva aventura, llegeix i disfruta!</h1>
+            
         </header>
+        <section class="text">Text</section>
+        
+        <footer>
+            <button class="button" onclick="ferSi()">Sí</button>
+            <button class="button" onclick="ferNo()">No</button>
+        </footer>
+    </main>
+    <script>
+        let historia = [
+            {
+                text: 'benvingut Vols llegir una història? ',
+                si: 1,
+                no: 5,
+            },
+            {
+                text: 'Aquesta història està formada per dues pàgines vols continuar? ',
+                si: 2,
+                no: 6,
 
-        <main>
-            <header>
-                <div>Pagina</div>
-            </header>
-            <section class="text">Text</section>
-            <footer>
-                <button onclick="ferSi()">Sí</button>
-                <button onclick="ferNo()">No</button>
-            </footer>
-        </main>
+            },
+            {
+                text: 'Però realment estàs segur que vols llegir aquesta història?',
+                si: 3,
+                no: 5,
+            },
+            {
+                text: 'ok, perfecte vols començar la història doncs clica al si?',
+                si: 4,
+                no: 6,
+            },
+            {
+                text: 'La història encara no sa escrit, adeu.',
+                si: 6,
+                no: 6,
+            },
+            {
+                text: 'To he de torna a preguntar segur que no vols llegir aquesta història?',
+                si: 3,
+                no: 6,
+            },
+            {
+                text: 'Adeu? ',
+                
 
-        <script>
-            let historia = [
-                {text:'benvingut'},
-                {text:'continuem'}
-            ]
-            let pagina = 0;
-            let text = document.querySelector('.text');
+               
+            },
+        ]
+
+
+
+        let pagina = 0;
+        let text = document.querySelector('.text');
+        text.textContent = historia[pagina].text;
+        
+
+
+
+        function ferSi() {
+            pagina = historia[pagina].si;
+            text.textContent = historia[pagina].text;
+        }
+        function ferNo() {
+            pagina = historia[pagina].no;
             text.textContent = historia[pagina].text;
 
-            function ferSi() {
-                pagina = pagina + 1;
-                text.textContent = historia[pagina].text;
-            }
-            function ferNo() {
-                pagina = pagina - 1;
-                text.textContent = historia[pagina].text;
-            }
-        </script>
+        }
 
-    </body>
+    </script>
+
+    
+</body>
 
 </html>
