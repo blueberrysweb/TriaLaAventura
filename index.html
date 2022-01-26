@@ -10,86 +10,122 @@
 </head>
 
 <body>
-    <header>
-        <div class="head">
-            <h1 class="txttitol">Benvingut a la teva aventura, llegeix i disfruta!</h1>
-        </div>
-    </header>
-
-    <main>
-        <header>
-            
-        </header>
-        <section class="text">Text</section>
-        
-        <footer>
-            <button class="button" onclick="ferSi()">Sí</button>
-            <button class="button" onclick="ferNo()">No</button>
-        </footer>
-    </main>
-    <script>
-        let historia = [
-            {
-                text: 'benvingut Vols llegir una història? ',
-                si: 1,
-                no: 5,
-            },
-            {
-                text: 'Aquesta història està formada per dues pàgines vols continuar? ',
-                si: 2,
-                no: 6,
-
-            },
-            {
-                text: 'Però realment estàs segur que vols llegir aquesta història?',
-                si: 3,
-                no: 5,
-            },
-            {
-                text: 'ok, perfecte vols començar la història doncs clica al si?',
-                si: 4,
-                no: 6,
-            },
-            {
-                text: 'La història encara no sa escrit, adeu.',
-                si: 6,
-                no: 6,
-            },
-            {
-                text: 'To he de torna a preguntar segur que no vols llegir aquesta història?',
-                si: 3,
-                no: 6,
-            },
-            {
-                text: 'Adeu? ',
+    <div class="wrapper">
+        <div class="divcuadricula">
+            <header>
+                <div class="head">
+                    <h1 class="txttitol">Benvingut a la teva aventura, llegeix i disfruta!</h1>
+                </div>
+            </header>
+    
+            <main>
                 
-
-               
-            },
-        ]
-
-
-
-        let pagina = 0;
-        let text = document.querySelector('.text');
-        text.textContent = historia[pagina].text;
+                <section class="text">Text</section>
+                
+                <footer>
+                    <button class="button" onclick="ferSi()">Sí</button>
+                    <button class="button" onclick="ferNo()">No</button>
+                </footer>
+            </main>
+        </div>
+        <div class="divcuadricula1">
+            <p id="nom">hola:</p>
+            <button onclick="alerta()">On</button>
+        </div>
+        <div class="divcuadricula2">
+                <header id = 'pagina'>
+                  pagina   
+                </header>
+        </div>
+        <div class="divcuadricula3"></div>
+        
+      </div>
+    
         
 
-
-
-        function ferSi() {
-            pagina = historia[pagina].si;
-            text.textContent = historia[pagina].text;
-        }
-        function ferNo() {
-            pagina = historia[pagina].no;
-            text.textContent = historia[pagina].text;
-
-        }
-
-    </script>
 
     
+     
 </body>
+<script>
+    let historia = [
+        {
+            text: 'benvingut Vols llegir una història? ',
+            si: 1,
+            no: 5,
+        },
+        {
+            text: 'Aquesta història està formada per dues pàgines vols continuar? ',
+            si: 2,
+            no: 6,
+
+        },
+        {
+            text: 'Però realment estàs segur que vols llegir aquesta història?',
+            si: 3,
+            no: 5,
+        },
+        {
+            text: 'ok, perfecte vols començar la història doncs clica al si?',
+            si: 4,
+            no: 6,
+        },
+        {
+            text: 'La història encara no sa escrit, adeu.',
+            si: 6,
+            no: 6,
+        },
+        {
+            text: 'To he de torna a preguntar segur que no vols llegir aquesta història?',
+            si: 3,
+            no: 6,
+        },
+        {
+            text: 'Adeu? ',
+            
+
+           
+        },
+    ]
+
+
+
+    let pagina = 0;
+    let text = document.querySelector('.text');
+    text.textContent = historia[pagina].text;
+
+    let numPagina = document.querySelector('#pagina');
+    numPagina.textContent = 'pagina: ' + pagina;
+    
+
+
+
+    function ferSi() {
+        pagina = historia[pagina].si;
+        text.textContent = historia[pagina].text;  
+        let numPagina = document.querySelector('#pagina');
+        numPagina.textContent = 'pagina: ' + pagina;
+    }
+    function ferNo() {
+        pagina = historia[pagina].no;
+        text.textContent = historia[pagina].text;
+        let numPagina = document.querySelector('#pagina');
+        numPagina.textContent = 'pagina: ' + pagina;
+
+    }
+
+    function alerta() 
+    {
+        let mensaje;
+        let opcio = prompt("Posa el teu nom:", );
+        mensaje = "Hola " + opcio; 
+        document.getElementById("nom").innerHTML = mensaje;
+    }
+  
+
+
+ 
+
+</script>
 
 </html>

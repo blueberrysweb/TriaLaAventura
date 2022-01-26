@@ -1,13 +1,13 @@
 
 
 body {
-    max-width: 30rem;
+    max-width: 80rem;
     margin: 0 auto;
-    background-image:  url('./img2.jpg');
+    
 }
 
 .text {
-    background-color: rgb(131, 245, 253);
+    background-color: rgb(202, 247, 250);
     padding: 2em;
     margin-bottom: 2em;
     font-size: x-large;
@@ -17,9 +17,10 @@ body {
     background-color: white;
     color: black;
     border: 2px solid #4CAF50; /* Green */
+    align-items: center;
   }
 .head {
-    background-color: rgb(77, 166, 250);
+    background-color: rgb(222, 238, 253);
   }
 .txttitol {
     
@@ -28,3 +29,31 @@ body {
     text-align: center;
 
 }
+
+
+.wrapper {
+  background-color: cadetblue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 400px 200px;
+}
+.divcuadricula{
+  background-color: rgb(243, 245, 240);
+}
+.divcuadricula1{
+  background-color: rgb(156, 158, 152);
+}
+.divcuadricula2{
+  background-color: rgb(197, 216, 163);
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.divcuadricula3{
+  background-color: rgb(239, 247, 173);
+}
+
+
