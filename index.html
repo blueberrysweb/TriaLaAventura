@@ -1,87 +1,77 @@
 <!DOCTYPE html>
 <html>
-    
-
-
 <head>
     <title>La teva aventura</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="divcuadricula">
-            <header>
-                <div class="head">
-                    <h1 class="txttitol">Benvingut a la teva aventura, llegeix i disfruta!</h1>
-                </div>
-            </header>
-    
-            <main>
-                
-                <section class="text">Text</section>
-                
-                <footer>
-                    <button class="button" onclick="ferSi()">Sí</button>
-                    <button class="button" onclick="ferNo()">No</button>
-                </footer>
-            </main>
-        </div>
-        <div class="divcuadricula1">
-            <p id="nom">hola:</p>
-            <button onclick="alerta()">On</button>
-        </div>
-        <div class="divcuadricula2">
-                <header id = 'pagina'>
-                  pagina   
-                </header>
-        </div>
-        <div class="divcuadricula3"></div>
+<body class="HolyGrail">
+    <header><h1 class="txttitol">La història interminable!</h1></header>
+    <div class="HolyGrail-body">
+        <main class="HolyGrail-content">
+        <div class="txthist"><section class="text">Text</section></div>
+       
+          
+            <button class="button" onclick="ferSi()">Sí</button>
+            <button class="button" onclick="ferNo()">No</button>
+            <button class="button" onclick="ferreset()">Reset</button>
+        </main>
         
-      </div>
-    
-        
-
-
-    
-     
+      <nav class="HolyGrail-nav"><p id="nom">hola:</p>
+        <button onclick="alerta()">On</button></nav>
+      <aside class="HolyGrail-ads"> 
+         <p id = 'pagina' class="txthist">pagina</p>
+            </aside>
+    </div>
+    <footer>…</footer>
 </body>
+
 <script>
     let historia = [
         {
-            text: 'benvingut Vols llegir una història? ',
+            text: 'Benvingut Vols llegir una història? ',
             si: 1,
             no: 5,
+            reset: 0,
         },
         {
             text: 'Aquesta història està formada per dues pàgines vols continuar? ',
             si: 2,
             no: 6,
+            reset: 0,
 
         },
         {
             text: 'Però realment estàs segur que vols llegir aquesta història?',
             si: 3,
             no: 5,
+            reset: 0,
         },
         {
             text: 'ok, perfecte vols començar la història doncs clica al si?',
             si: 4,
             no: 6,
+            reset: 0,
         },
         {
             text: 'La història encara no sa escrit, adeu.',
             si: 6,
             no: 6,
+            reset: 0,
+            
         },
         {
             text: 'To he de torna a preguntar segur que no vols llegir aquesta història?',
             si: 3,
             no: 6,
+            reset: 0,
         },
         {
-            text: 'Adeu? ',
+            text: 'Vols começar? ',
+            si: 0,
+            no: 0,
+            reset: 0,
             
 
            
@@ -98,7 +88,12 @@
     numPagina.textContent = 'pagina: ' + pagina;
     
 
-
+    function ferreset(){
+        pagina = historia[pagina].reset;
+        text.textContent = historia[pagina].text;  
+        let numPagina = document.querySelector('#pagina');
+        numPagina.textContent = 'pagina: ' + pagina;
+    }
 
     function ferSi() {
         pagina = historia[pagina].si;
