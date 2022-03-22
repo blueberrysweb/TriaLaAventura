@@ -1,126 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>La teva aventura</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-<body class="HolyGrail">
+  <body class="HolyGrail">
     <header><h1 class="txttitol">La història interminable!</h1></header>
     <div class="HolyGrail-body">
-        <main class="HolyGrail-content">
+      <main class="HolyGrail-content">
         <div class="txthist"><section class="text">Text</section></div>
-       
-          
-            <button class="button" onclick="ferSi()">Sí</button>
-            <button class="button" onclick="ferNo()">No</button>
-            <button class="button" onclick="ferreset()">Reset</button>
-        </main>
+
+        <button class="button" onclick="ferSi()">Sí</button>
+        <button class="button" onclick="ferNo()">No</button>
+        <button class="button" onclick="ferreset()">Reset</button>
+      </main>
+
+      <nav class="HolyGrail-nav">
         
-      <nav class="HolyGrail-nav"><p id="nom">hola:</p>
-        <button onclick="alerta()">On</button></nav>
-      <aside class="HolyGrail-ads"> 
-         <p id = 'pagina' class="txthist">pagina</p>
-            </aside>
+      </nav>
+      <aside class="HolyGrail-ads">
+        <p id="pagina" class="txthist">pagina</p>
+      </aside>
     </div>
-    <footer>…</footer>
-</body>
+    <footer</footer>
+  </body>
 
-<script>
+  <script>
     let historia = [
-        {
-            text: 'Benvingut Vols llegir una història? ',
-            si: 1,
-            no: 5,
-            reset: 0,
-        },
-        {
-            text: 'Aquesta història està formada per dues pàgines vols continuar? ',
-            si: 2,
-            no: 6,
-            reset: 0,
-
-        },
-        {
-            text: 'Però realment estàs segur que vols llegir aquesta història?',
-            si: 3,
-            no: 5,
-            reset: 0,
-        },
-        {
-            text: 'ok, perfecte vols començar la història doncs clica al si?',
-            si: 4,
-            no: 6,
-            reset: 0,
-        },
-        {
-            text: 'La història encara no sa escrit, adeu.',
-            si: 6,
-            no: 6,
-            reset: 0,
-            
-        },
-        {
-            text: 'To he de torna a preguntar segur que no vols llegir aquesta història?',
-            si: 3,
-            no: 6,
-            reset: 0,
-        },
-        {
-            text: 'Vols começar? ',
-            si: 0,
-            no: 0,
-            reset: 0,
-            
-
-           
-        },
-    ]
-
-
+      {
+        text: "Benvingut Vols llegir una història? ",
+        si: 1,
+        no: 5,
+        reset: 0,
+      },
+      {
+        text: "Aquesta història està formada per un llibre interminable vols continuar? ",
+        si: 2,
+        no: 5,
+        reset: 0,
+      },
+      {
+        text: "Però realment estàs segur que vols llegir aquesta història?",
+        si: 3,
+        no: 5,
+        reset: 0,
+      },
+      {
+        text: "Ok, perfecte vols començar la història doncs clica al si?",
+        si: 4,
+        no: 5,
+        reset: 0,
+      },
+      {
+        text: "La història està començant vas pel bon camí, vols continuar?",
+        si: 3,
+        no: 6,
+        reset: 0,
+      },
+      {
+        text: "To he de torna a preguntar segur que no vols llegir aquesta història?",
+        si: 3,
+        no: 6,
+        reset: 0,
+      },
+      {
+        text: "És una llastima que no vulguis, encara ets a temps, comencem?",
+        si: 0,
+        no: 7,
+        reset: 0,
+      },
+      {
+        text: "NO vols começar? ",
+        si: 0,
+        no: 5,
+        reset: 0,
+      },
+    
+    ];
 
     let pagina = 0;
-    let text = document.querySelector('.text');
+    let text = document.querySelector(".text");
     text.textContent = historia[pagina].text;
 
-    let numPagina = document.querySelector('#pagina');
-    numPagina.textContent = 'pagina: ' + pagina;
-    
+    let numPagina = document.querySelector("#pagina");
+    numPagina.textContent = "pagina: " + pagina;
 
-    function ferreset(){
-        pagina = historia[pagina].reset;
-        text.textContent = historia[pagina].text;  
-        let numPagina = document.querySelector('#pagina');
-        numPagina.textContent = 'pagina: ' + pagina;
+    function ferreset() {
+      pagina = historia[pagina].reset;
+      text.textContent = historia[pagina].text;
+      let numPagina = document.querySelector("#pagina");
+      numPagina.textContent = "pagina: " + pagina;
     }
 
     function ferSi() {
-        pagina = historia[pagina].si;
-        text.textContent = historia[pagina].text;  
-        let numPagina = document.querySelector('#pagina');
-        numPagina.textContent = 'pagina: ' + pagina;
+      pagina = historia[pagina].si;
+      text.textContent = historia[pagina].text;
+      let numPagina = document.querySelector("#pagina");
+      numPagina.textContent = "pagina: " + pagina;
     }
     function ferNo() {
-        pagina = historia[pagina].no;
-        text.textContent = historia[pagina].text;
-        let numPagina = document.querySelector('#pagina');
-        numPagina.textContent = 'pagina: ' + pagina;
-
+      pagina = historia[pagina].no;
+      text.textContent = historia[pagina].text;
+      let numPagina = document.querySelector("#pagina");
+      numPagina.textContent = "pagina: " + pagina;
     }
 
-    function alerta() 
-    {
-        let mensaje;
-        let opcio = prompt("Posa el teu nom:", );
-        mensaje = "Hola " + opcio; 
-        document.getElementById("nom").innerHTML = mensaje;
-    }
   
-
-
- 
-
-</script>
-
+  </script>
 </html>
